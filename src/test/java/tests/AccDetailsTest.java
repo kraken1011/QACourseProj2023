@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.testng.annotations.AfterTest;
 import pages.BasePage;
 import pages.HomePage;
 
@@ -38,4 +39,8 @@ public class AccDetailsTest  extends TestUtil {
           throw new io.cucumber.java.PendingException();
         }
 
+    @AfterTest
+    public void TearDown() {
+        driver.quit();
+    }
 }

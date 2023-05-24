@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.testng.annotations.AfterTest;
 
 public class HomePageTest  extends TestUtil {
 
@@ -51,6 +52,11 @@ public class HomePageTest  extends TestUtil {
             Assertions.assertFalse(stillOnHomePage);
         throw new io.cucumber.java.PendingException();
         }
+    @AfterTest
+    public void TearDown() {
+        driver.quit();
+    }
+
 
     }
 

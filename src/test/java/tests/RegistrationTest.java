@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.testng.annotations.AfterTest;
 
 public class RegistrationTest extends TestUtil {
 
@@ -34,5 +35,10 @@ public class RegistrationTest extends TestUtil {
     public void a_successful_registration_is_completed() {
         accDetailsPage.isLoaded();
         throw new io.cucumber.java.PendingException();
+    }
+
+    @AfterTest
+    public void TearDown() {
+        driver.quit();
     }
 }
