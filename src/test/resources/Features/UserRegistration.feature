@@ -7,5 +7,5 @@ Feature: User Registration
     Then a successful registration is completed
     Examples:
       | userId | pwd |
-      | Ivan   | asjdhhjasl@8usd|
+      | Ivan@abv.bg   | asjdhhjasl@8usd|
 

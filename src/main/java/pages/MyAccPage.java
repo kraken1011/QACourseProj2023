@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class MyAccPage extends BasePage {
@@ -23,17 +24,17 @@ public class MyAccPage extends BasePage {
     WebElement passwordInput;
 
     public MyAccPage (WebDriver driver){
-        super(driver);
+        super(driver, "https://practice.automationtesting.in/my-account/");
     }
 
     public String getRegisterBtn (){
-        executeOperationWithExplicitWait(10, ExpectedConditions.visibilityOf(registerBtn), 4);
+        executeOperationWithExplicitWait(ExpectedConditions.visibilityOf(registerBtn), 4);
         return registerBtn.getText();
     }
 
-    public MyAccPage fillUserNameAndPwdReg(String usernameField, String passwordField){
-        regEmailInputBox.sendKeys(usernameField);
-        regPassword.sendKeys(passwordField);
+    public MyAccPage fillUserNameAndPwdReg(){
+        regEmailInputBox.sendKeys("Ivan@abv.bg");
+        regPassword.sendKeys("asjdhhjasl@8usd");
         return new MyAccPage(driver);
     }
 

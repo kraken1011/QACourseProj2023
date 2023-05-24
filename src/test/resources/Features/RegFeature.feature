@@ -1,7 +1,7 @@
 Feature: Standard app feature
 
   Scenario: Open the browser and get to the home page
-    Given the browser is opened
+    Given the browser is open
     When the home page is entered by the user
     Then the user sees the slides on the home page
 

@@ -6,6 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import pages.AccDetailsPage;
+import pages.HomePage;
+import pages.MyAccPage;
+import tests.AccDetailsTest;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,6 +22,9 @@ public class TestUtil {
     public WebDriver driver;
     private String url;
     private int implicitWait;
+    public static HomePage homePage;
+    public static MyAccPage myAccPage;
+    public static AccDetailsPage accDetailsPage;
 
 
 
@@ -47,6 +54,9 @@ public class TestUtil {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("Start-Maximized");
         options.addExtensions(new File("src/test/java/resources/chromeExtensions/Adblocker2.crx"));
+        homePage = new HomePage(driver);
+        myAccPage = new MyAccPage(driver);
+        accDetailsPage = new AccDetailsPage(driver);
     }
 
     @AfterMethod

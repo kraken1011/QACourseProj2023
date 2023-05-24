@@ -18,7 +18,7 @@ public class AccSignedInPage  extends BasePage{
     }
 
     public AccSignedInPage (WebDriver driver){
-        super(driver);
+        super(driver, "https://practice.automationtesting.in/my-account/");
     }
 
     public AccDetailsPage viewAccDetailsPage() {

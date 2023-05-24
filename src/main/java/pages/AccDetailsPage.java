@@ -22,7 +22,7 @@ public class AccDetailsPage  extends BasePage{
     WebElement signOutLink;
 
     public AccDetailsPage (WebDriver driver) {
-        super(driver);
+        super(driver, "https://practice.automationtesting.in/my-account/edit-account/");
     }
 
     public void checkEmailAddress () {
